@@ -35,42 +35,42 @@ public class RockPaperScissors
     {
         String result = "";
 
-        if (playerSelection == computerSelection)
+        if (playerSelection.equals(computerSelection))
             {
                 result = "It's a draw!";
             }
 
-        if (playerSelection == "rock")
+        if (playerSelection.equals("rock"))
             {
-                if (computerSelection == "paper")
+                if (computerSelection.equals("paper"))
                     {
                         result = "You lose. Paper beats rock.";
                     }
-                if (computerSelection == "scissors")
+                if (computerSelection.equals("scissors"))
                     {
                         result = "You win! Rock beats scissors.";
                     }
             }
 
-        if (playerSelection == "paper")
+        if (playerSelection.equals("paper"))
             {
-                if (computerSelection == "rock")
+                if (computerSelection.equals("rock"))
                     {
                         result = "You win! Paper beats rock.";
                     }
-                if (computerSelection == "scissors")
+                if (computerSelection.equals("scissors"))
                     {
                         result = "You lose. Scissors beats paper.";
                     }
             }
 
-        if (playerSelection == "scissors")
+        if (playerSelection.equals("scissors"))
             {
-                if (computerSelection == "rock")
+                if (computerSelection.equals("rock"))
                     {
                         result = "You lose. Rock beats scissors.";
                     }
-                if (computerSelection == "paper")
+                if (computerSelection.equals("paper"))
                     {
                         result = "You win! Scissors beats paper.";
                     }
@@ -89,8 +89,6 @@ public class RockPaperScissors
         int playerScore = 0;
         String result = "";
 
-        System.out.println("Lets play Rock, Paper, Scissors!");
-
         do 
         {
             System.out.print("Rock, Paper, or Scissors? -> ");
@@ -101,17 +99,20 @@ public class RockPaperScissors
             System.out.println("Computer chose " + computerSelection);
 
             result = playRound(computerSelection, playerSelection);
-
-            if (result.substring(0, 7) == "You win!")
-                {
-                    playerScore++;
-                }
-            else if (result.substring(0, 8) == "You lose.")
-                {
-                    computerScore++;
-                }
-            
             System.out.println(result);
+
+            if (!result.substring(7, 11).equals("draw"))
+                {
+                    if (result.substring(4, 7).equals("win"))
+                        {
+                            playerScore++;
+                        }
+                    else if (result.substring(4, 8).equals("lose"))
+                        {
+                            computerScore++;
+                        }
+                }
+
             System.out.println("Computer " + computerScore + "-" + playerScore + " Player");
         } 
         while(computerScore != 3 && playerScore != 3);
