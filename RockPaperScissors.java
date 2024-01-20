@@ -35,6 +35,25 @@ public class RockPaperScissors
     {
         String result = "";
 
+        if (playerSelection == computerSelection)
+            {
+                result = "It's a draw!";
+            }
+        if (playerSelection == "rock")
+            {
+
+            }
+
+        if (playerSelection == "paper")
+            {
+
+            }
+
+        if (playerSelection == "scissors")
+            {
+
+            }
+
         return result;
     }
 
@@ -44,10 +63,12 @@ public class RockPaperScissors
 
         String playerSelection = "";
         String computerSelection = "";
+        int computerScore = 0;
+        int playerScore = 0;
 
         System.out.println("Lets play Rock, Paper, Scissors!");
         System.out.print("Rock, Paper, or Scissors? -> ");
-        playerSelection = input.nextLine();
-        computerSelection = getComputerChoice();
+        playerSelection = (input.nextLine()).toLowerCase();
+        computerSelection = (getComputerChoice()).toLowerCase();
     }
 }
