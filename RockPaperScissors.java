@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class RockPaperScissors 
 {
     static String getComputerChoice()
@@ -38,6 +40,14 @@ public class RockPaperScissors
 
     public static void main(String[] args) 
     {
-        
+        Scanner input = new Scanner(System.in);
+
+        String playerSelection = "";
+        String computerSelection = "";
+
+        System.out.println("Lets play Rock, Paper, Scissors!");
+        System.out.print("Rock, Paper, or Scissors? -> ");
+        playerSelection = input.nextLine();
+        computerSelection = getComputerChoice();
     }
 }
