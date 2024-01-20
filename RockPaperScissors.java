@@ -88,7 +88,6 @@ public class RockPaperScissors
         int computerScore = 0;
         int playerScore = 0;
         String result = "";
-        boolean playerWon = true;
 
         System.out.println("Lets play Rock, Paper, Scissors!");
 
@@ -125,6 +124,8 @@ public class RockPaperScissors
             {
                 System.out.println("Player beats computer " + playerScore + "-" + computerScore);
             }
+        
+        input.close();
     }
 
     public static void main(String[] args) 
