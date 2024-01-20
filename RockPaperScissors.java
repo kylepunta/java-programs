@@ -29,8 +29,15 @@ public class RockPaperScissors
         return computerChoice;
     }
 
+    static String playRound(String computerSelection, String playerSelection)
+    {
+        String result = "";
+
+        return result;
+    }
+
     public static void main(String[] args) 
     {
-        System.out.println(getComputerChoice());
+        
     }
 }
