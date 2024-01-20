@@ -79,7 +79,7 @@ public class RockPaperScissors
         return result;
     }
 
-    public static void main(String[] args) 
+    static void game()
     {
         Scanner input = new Scanner(System.in);
 
@@ -87,10 +87,51 @@ public class RockPaperScissors
         String computerSelection = "";
         int computerScore = 0;
         int playerScore = 0;
+        String result = "";
+        boolean playerWon = true;
 
         System.out.println("Lets play Rock, Paper, Scissors!");
-        System.out.print("Rock, Paper, or Scissors? -> ");
-        playerSelection = (input.nextLine()).toLowerCase();
-        computerSelection = (getComputerChoice()).toLowerCase();
+
+        do 
+        {
+            System.out.print("Rock, Paper, or Scissors? -> ");
+            playerSelection = (input.nextLine()).toLowerCase();
+            computerSelection = (getComputerChoice()).toLowerCase();
+
+            System.out.println("You chose " + playerSelection);
+            System.out.println("Computer chose " + computerSelection);
+
+            result = playRound(computerSelection, playerSelection);
+
+            if (result.substring(0, 7) == "You win!")
+                {
+                    playerScore++;
+                }
+            else if (result.substring(0, 8) == "You lose.")
+                {
+                    computerScore++;
+                }
+            
+            System.out.println(result);
+            System.out.println("Computer " + computerScore + "-" + playerScore + " Player");
+        } 
+        while(computerScore != 3 && playerScore != 3);
+
+        if (computerScore > playerScore)
+            {
+                System.out.println("Computer beats player " + computerScore + "-" + playerScore);
+            }
+        else if (playerScore > computerScore)
+            {
+                System.out.println("Player beats computer " + playerScore + "-" + computerScore);
+            }
+    }
+
+    public static void main(String[] args) 
+    {
+        System.out.println("Let's play best of five of Rock, Paper, Scissors!");
+        System.out.println();
+
+        game();
     }
 }
