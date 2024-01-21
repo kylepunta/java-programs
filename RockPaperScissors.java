@@ -2,13 +2,14 @@ import java.util.Scanner;
 
 public class RockPaperScissors 
 {
+    
     static String getComputerChoice()
     {
         String computerChoice = "";
 
         double randomNumber = Math.floor((Math.random() * 10) + 1);
 
-        while (randomNumber != 1 && randomNumber != 2 && randomNumber != 3)
+        while (randomNumber > 3)
             {
                 randomNumber = Math.floor((Math.random() * 10) + 1);
             }
